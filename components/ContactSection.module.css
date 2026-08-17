@@ -1,0 +1,216 @@
+.section {
+  --start: 50vh;
+  --space: 50vh;
+  --hue: 210;
+  --accent: #38bdf8;
+  --switch: #000;
+  --dimmed: color-mix(in oklch, #f8fafc, #0000 80%);
+  --font-size-min: 14;
+  --font-size-max: 20;
+  --font-ratio-min: 1.1;
+  --font-ratio-max: 1.33;
+  --font-width-min: 375;
+  --font-width-max: 1500;
+  --font-level: 4;
+  color-scheme: dark;
+  font-family: var(--font-display);
+  background: #0c0c0c;
+  color: #f8fafc;
+  overflow: clip;
+}
+
+.fluid {
+  --fluid-min: calc(
+    var(--font-size-min) * pow(var(--font-ratio-min), var(--font-level, 0))
+  );
+  --fluid-max: calc(
+    var(--font-size-max) * pow(var(--font-ratio-max), var(--font-level, 0))
+  );
+  --fluid-preferred: calc(
+    (var(--fluid-max) - var(--fluid-min)) /
+      (var(--font-width-max) - var(--font-width-min))
+  );
+  --fluid-type: clamp(
+    (var(--fluid-min) / 16) * 1rem,
+    ((var(--fluid-min) / 16) * 1rem) -
+      (((var(--fluid-preferred) * var(--font-width-min)) / 16) * 1rem) +
+      (var(--fluid-preferred) * var(--variable-unit, 100vi)),
+    (var(--fluid-max) / 16) * 1rem
+  );
+  font-size: var(--fluid-type);
+}
+
+.header {
+  position: sticky;
+  top: calc((var(--count) - 1) * -1lh);
+  line-height: 1.2;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: var(--space);
+  --font-level: 4;
+  --font-size-min: 24;
+}
+
+.headerContent {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: calc(var(--start) - 0.5lh);
+}
+
+.header h1 {
+  position: sticky;
+  top: calc(var(--start) - 0.5lh);
+  font-size: inherit;
+  margin: 0;
+  display: inline-block;
+  height: fit-content;
+  font-weight: 600;
+}
+
+.header ul {
+  font-weight: 600;
+  padding-inline: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.header li {
+  background: linear-gradient(
+    180deg,
+    var(--dimmed) 0 calc(var(--start) - 0.5lh),
+    var(--accent) calc(var(--start) - 0.55lh) calc(var(--start) + 0.55lh),
+    var(--dimmed) calc(var(--start) + 0.5lh)
+  );
+  background-attachment: fixed;
+  color: #0000;
+  background-clip: text;
+}
+
+.main {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #111827;
+  transform-origin: 50% 100%;
+}
+
+@supports (animation-timeline: view()) {
+  .main {
+    border-radius: 1rem;
+    view-timeline: --section;
+  }
+
+  .main::before {
+    scale: 0.9;
+    animation: grow both ease-in-out;
+    animation-timeline: --section;
+    animation-range: entry 50%;
+  }
+
+  .revealText {
+    animation: reveal both ease-in-out;
+    animation-timeline: --section;
+    animation-range: entry 50%;
+  }
+
+  .links {
+    animation: reveal both ease-in-out;
+    animation-timeline: --section;
+    animation-range: entry 50%;
+  }
+
+  @keyframes reveal {
+    0% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes grow {
+    100% {
+      scale: 1;
+      border-radius: 0;
+    }
+  }
+}
+
+.mainAlign {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  --font-level: 4;
+  --font-size-min: 20;
+}
+
+.revealText {
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 0 0 transparent;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  color: #fff;
+}
+
+.contactLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+}
+
+.contactLink:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #000;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@media (prefers-reduced-motion) {
+  .section * {
+    animation: none;
+    transition: none;
+  }
+}
