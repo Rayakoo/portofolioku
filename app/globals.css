@@ -324,7 +324,7 @@ body {
   z-index: 100;
   display: flex;
   justify-content: center;
-  padding: 0 1rem;
+  padding: 0 2rem;
   opacity: 0;
   pointer-events: none;
   transition: opacity 700ms ease, top 700ms ease;

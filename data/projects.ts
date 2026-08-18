@@ -4,7 +4,11 @@ export interface Project {
   description: string
   detail: string
   image: string
-  link: string
+  tags?: string[]
+  demo?: string
+  source?: string
+  images?: string[]
+  stack?: { name: string; desc: string }[]
 }
 
 export const PROJECTS: Project[] = [
@@ -16,7 +20,6 @@ export const PROJECTS: Project[] = [
     detail:
       'TeachUp adalah platform edukasi digital yang menggabungkan AI learning untuk personalisasi materi, agregasi berita pendidikan terkini, webinar interaktif, serta komunitas pembelajaran yang kolaboratif. Dibangun untuk membantu pelajar dan pengajar mendapatkan pengalaman belajar yang lebih adaptif dan menyenangkan.',
     image: '/projects/Teachup.png',
-    link: 'https://github.com/MDJAmin',
   },
   {
     slug: 'ngalam-tanggap',
@@ -26,7 +29,6 @@ export const PROJECTS: Project[] = [
     detail:
       'Ngalam Tanggap adalah aplikasi pelaporan dan layanan tanggap darurat berbasis lokasi. Pengguna dapat melaporkan kejadian, melihat peta sebaran insiden secara real-time, dan mengakses layanan darurat dengan cepat sehingga membantu meningkatkan keamanan masyarakat sekitar.',
     image: '/projects/ngalam_tanggap.png',
-    link: 'https://github.com/MDJAmin',
   },
   {
     slug: 'sobat-bimbing',
@@ -36,7 +38,6 @@ export const PROJECTS: Project[] = [
     detail:
       'Sobat Bimbing adalah aplikasi pendampingan Islami yang menyasar remaja. Menyediakan materi pembinaan karakter, jadwal bimbingan, serta edukasi digital agar pengguna mendapatkan tuntunan nilai-nilai Islam secara interaktif dan mudah diakses kapan saja.',
     image: '/projects/sobat_bimbing.png',
-    link: 'https://github.com/MDJAmin',
   },
   {
     slug: 'qnectify',
@@ -46,7 +47,6 @@ export const PROJECTS: Project[] = [
     detail:
       'Qnectify adalah platform pembelajaran bertenaga AI dengan pembuatan kuis otomatis dari materi, elemen gamifikasi untuk menjaga motivasi, serta fitur kolaboratif antar pengguna untuk belajar bersama secara lebih efektif dan menyenangkan.',
     image: '/projects/qnectify.png',
-    link: 'https://github.com/MDJAmin',
   },
   {
     slug: 'neuroclash',
@@ -56,7 +56,6 @@ export const PROJECTS: Project[] = [
     detail:
       'Neuroclash mengubah proses belajar menjadi pengalaman battle royale yang kompetitif. Pemain menjawab soal sambil bersaing dengan pemain lain dalam arena yang seru, sehingga edukasi terasa seperti game yang adiktif namun tetap mendidik.',
     image: '/projects/neuroclash.png',
-    link: 'https://github.com/MDJAmin',
   },
   {
     slug: 'ayam-kota-malang',
@@ -66,7 +65,6 @@ export const PROJECTS: Project[] = [
     detail:
       'Ayam Kota Malang adalah aplikasi kuliner yang memudahkan pengguna menemukan dan memesan menu ayam khas Kota Malang. Dilengkapi katalog menu, keranjang belanja, dan integrasi pemesanan agar proses order menjadi cepat dan praktis.',
     image: '/projects/ayamkotamalang.png',
-    link: 'https://github.com/MDJAmin',
   },
   {
     slug: 'dear-baby',
@@ -76,7 +74,6 @@ export const PROJECTS: Project[] = [
     detail:
       'Dear Baby adalah platform yang mendukung para orang tua dalam mengelola kebutuhan parenting dan memantau tumbuh kembang anak. Berisi jadwal, tips pengasuhan, serta pencatatan perkembangan agar tumbuh kembang anak selalu terpantau.',
     image: '/projects/dearbaby.png',
-    link: 'https://github.com/MDJAmin',
   },
   {
     slug: 'epiccsafe',
@@ -86,7 +83,6 @@ export const PROJECTS: Project[] = [
     detail:
       'EpicCSafe membantu pengguna menjaga keamanan data dan privasi digital. Menyediakan fitur pemindaian ancaman, pengelolaan sandi, serta edukasi keamanan siber agar aktivitas online tetap aman dari berbagai risiko.',
     image: '/projects/epiccsafe.png',
-    link: 'https://github.com/MDJAmin',
   },
   {
     slug: 'omah-gembira',
@@ -96,7 +92,6 @@ export const PROJECTS: Project[] = [
     detail:
       'Omah Gembira adalah platform digital yang menghubungkan anggota komunitas, menjadwalkan kegiatan bersama, dan menyediakan layanan kebersamaan agar setiap kegiatan komunitas dapat dikelola dengan rapi dan menyenangkan.',
     image: '/projects/omahgembira.png',
-    link: 'https://github.com/MDJAmin',
   },
   {
     slug: 'omah-nalar',
@@ -106,7 +101,6 @@ export const PROJECTS: Project[] = [
     detail:
       'Omah Nalar menyediakan materi pembelajaran dan program pengembangan diri berbasis digital. Pengguna dapat mengakses kursus, mengikuti progres belajar, dan mengembangkan keterampilan secara mandiri dengan kurasi materi yang terstruktur.',
     image: '/projects/omahnalar.png',
-    link: 'https://github.com/MDJAmin',
   },
   {
     slug: 'riendys-adv',
@@ -116,7 +110,6 @@ export const PROJECTS: Project[] = [
     detail:
       'Riendys Adv adalah platform manajemen iklan dan promosi yang membantu bisnis merencanakan, menjalankan, dan memantau kampanye promosi dalam satu dashboard. Dilengkapi laporan performa agar setiap anggaran iklan lebih efektif dan terukur.',
     image: '/projects/riendysadv.png',
-    link: 'https://github.com/MDJAmin',
   },
   {
     slug: 'rps-generator-unsri',
@@ -126,7 +119,6 @@ export const PROJECTS: Project[] = [
     detail:
       'RPS Generator Unsri membantu dosen menyusun Rencana Pembelajaran Semester secara cepat dan terstandar. Dengan template otomatis dan panduan pengisian, proses administrasi akademik menjadi jauh lebih efisien.',
     image: '/projects/rps_generator_unsri.png',
-    link: 'https://github.com/MDJAmin',
   },
   {
     slug: 'sineda',
@@ -136,6 +128,5 @@ export const PROJECTS: Project[] = [
     detail:
       'Sineda adalah aplikasi layanan digital yang merangkum berbagai kebutuhan sehari-hari dalam satu tempat — mulai dari informasi layanan publik, notifikasi penting, hingga akses cepat ke fitur yang sering digunakan.',
     image: '/projects/sineda.png',
-    link: 'https://github.com/MDJAmin',
   },
 ]
