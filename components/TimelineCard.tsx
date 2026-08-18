@@ -33,7 +33,7 @@ export default function TimelineCard({
 
   return (
     <div
-      className={`relative w-full md:w-1/2 py-4 ${
+      className={`relative w-full md:w-1/2 py-5 md:py-4 ${
         side === 'left'
           ? 'md:pr-10 pl-10 pr-6 md:pl-0'
           : 'md:pl-10 pl-10 pr-6 md:pr-0 md:ml-auto'

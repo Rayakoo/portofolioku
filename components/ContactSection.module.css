@@ -196,6 +196,122 @@
   color: #000;
 }
 
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  width: min(560px, 100%);
+}
+
+.formIntro {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #fff;
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+.formInput,
+.formSelect,
+.formBtn {
+  font: inherit;
+  padding: 0.65rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+}
+
+.formInput {
+  flex: 1 1 220px;
+  min-width: 0;
+  background: #fff;
+  color: #000;
+}
+
+.formInput::placeholder {
+  color: #9ca3af;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.formSelect {
+  appearance: none;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 0.6rem 2.2rem 0.6rem 1.1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+}
+
+.formSelect:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.formSelect:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.formCustom {
+  flex: 0 1 160px;
+  min-width: 0;
+  background: #fff;
+  color: #000;
+}
+
+.formCustom::placeholder {
+  color: #9ca3af;
+}
+
+.formCustom:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.formSelect option {
+  background: #111827;
+  color: #fff;
+}
+
+.formBtn {
+  cursor: pointer;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #000;
+  border-radius: 999px;
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.formBtn:hover {
+  filter: brightness(1.1);
+}
+
+.formBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.formStatus {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
 .srOnly {
   position: absolute;
   width: 1px;

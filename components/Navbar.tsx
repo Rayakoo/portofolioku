@@ -74,13 +74,33 @@ export default function Navbar() {
   const onLight = active === 'services'
   const expanded = hover || scrolled
 
+  useEffect(() => {
+    const target = window.location.hash
+    if (target) {
+      const el = document.querySelector(target)
+      if (el) {
+        setTimeout(() => {
+          if (lenis) lenis.scrollTo(target, { offset: -80 })
+          else el.scrollIntoView({ behavior: 'smooth' })
+        }, 150)
+      }
+    }
+  }, [lenis])
+
   const handleClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
     setMenuOpen(false)
+
+    const target = document.querySelector(href)
+    if (!target) {
+      window.location.assign(`/${href}`)
+      return
+    }
+
     if (lenis) {
       lenis.scrollTo(href, { offset: -80 })
     } else {
-      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+      target.scrollIntoView({ behavior: 'smooth' })
     }
   }
 

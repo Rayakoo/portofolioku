@@ -83,7 +83,11 @@ export default function TimelineSection() {
             <div className="md:hidden absolute left-[10px] top-0 bottom-0 border-l border-dashed border-[#444]" />
 
             {timelineData.map((item, index) => (
-              <div key={index} className="relative flex">
+              <div
+                key={index}
+                className="relative flex mb-8 md:mb-0"
+                style={{ marginBottom: '3rem' }}
+              >
                 {/* Desktop dot */}
                 <div className="hidden md:block absolute top-[26px] z-10 w-[22px] h-[22px] rounded-full bg-[#555] border-[3px] border-[#0C0C0C] outline outline-1 outline-[#555] left-1/2 -translate-x-1/2" />
                 {/* Mobile dot */}
