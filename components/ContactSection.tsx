@@ -8,7 +8,7 @@ const WORDS = ['design.', 'prototype.', 'solve.', 'build.', 'develop.', 'ship.',
 
 export default function ContactSection() {
   return (
-    <section className={styles.section}>
+    <section id="contact" className={styles.section}>
       <header
         className={`${styles.fluid} ${styles.header}`}
         style={{ '--count': WORDS.length } as CSSProperties}

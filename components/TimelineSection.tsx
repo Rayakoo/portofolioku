@@ -64,7 +64,7 @@ const timelineData = [
 
 export default function TimelineSection() {
   return (
-    <section className="relative w-full bg-[#0C0C0C]">
+    <section id="timeline" className="relative w-full bg-[#0C0C0C]">
       <div className="py-8 px-4">
         <div
           className="my-5 h-px max-w-5xl mx-auto"

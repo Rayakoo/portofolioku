@@ -39,7 +39,7 @@ export default function AnimatedText({ text, className = '', style }: AnimatedTe
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start 0.8', 'end 0.2'],
+    offset: ['start 0.8', 'start 0.35'],
   })
 
   const words = text.split(/(\s+)/)

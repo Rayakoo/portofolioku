@@ -5,7 +5,7 @@ import AnimatedText from './AnimatedText'
 
 export default function AboutSection() {
   return (
-    <section className="relative min-h-screen bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 overflow-hidden">
+    <section id="about" className="relative min-h-screen bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 overflow-hidden">
       <FadeIn x={-80} y={0} delay={0.1} duration={0.9} className="absolute top-[4%] left-[1%] sm:left-[2%] md:left-[4%]">
         <img
           src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/moon_icon.11395d36.png"

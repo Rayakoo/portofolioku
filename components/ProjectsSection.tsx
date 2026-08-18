@@ -94,7 +94,7 @@ export default function ProjectsSection() {
   const rotated = [...PROJECTS.slice(start), ...PROJECTS.slice(0, start)]
 
   return (
-    <section className={styles.section}>
+    <section id="projects" className={styles.section}>
       <h2
         className="hero-heading font-black uppercase text-center pt-16 sm:pt-20 md:pt-28 mb-10 sm:mb-14 md:mb-20"
         style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}

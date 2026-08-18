@@ -11,6 +11,7 @@ import ProjectsSection from '@/components/ProjectsSection'
 import TimelineSection from '@/components/TimelineSection'
 import ContactSection from '@/components/ContactSection'
 import TerminalLoader from '@/components/TerminalLoader'
+import Navbar from '@/components/Navbar'
 
 const CRITICAL_IMAGES = [
   '/black.png',
@@ -89,6 +90,7 @@ export default function Home() {
   return (
     <div className="main-wrapper">
       {loading && <TerminalLoader />}
+      <Navbar />
     
       {/* <LithosHero /> */}
       <HeroSection />

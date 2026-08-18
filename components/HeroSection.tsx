@@ -6,7 +6,7 @@ import TiltCard from './TiltCard'
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-screen flex flex-col overflow-x-clip bg-[#0C0C0C]">
+    <section id="home" className="relative w-full h-screen flex flex-col overflow-x-clip bg-[#0C0C0C]">
 
 
       <div className="flex-1 flex flex-col justify-between overflow-hidden">
